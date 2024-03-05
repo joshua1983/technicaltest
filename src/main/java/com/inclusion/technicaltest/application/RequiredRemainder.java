@@ -14,7 +14,7 @@ public class RequiredRemainder {
    In other words, with given 𝑥, 𝑦 and 𝑛 you need to find the maximum possible integer from 0 to 𝑛 that has
    the remainder 𝑦 modulo 𝑥.
    */
-   public ResponseReminder requiredRemainder(int x, int y, int n) {
+   public ResponseReminder calculateRequiredRemainder(int x, int y, int n) {
       int result = 0;
       if (x < 0 || y < 0 || n < 0) {
          throw new IllegalArgumentException("The input values must be positive");
@@ -29,8 +29,8 @@ public class RequiredRemainder {
    }
 
    // This method is used to test the application with a POST request
-   public ResponseReminder requiredRemainder(RequestReminder requestReminder) throws IllegalArgumentException {
+   public ResponseReminder calculateRequiredRemainder(RequestReminder requestReminder) throws IllegalArgumentException {
 
-      return requiredRemainder(requestReminder.getX(), requestReminder.getY(), requestReminder.getN());
+      return calculateRequiredRemainder(requestReminder.getX(), requestReminder.getY(), requestReminder.getN());
    }
 }

@@ -34,7 +34,7 @@ public class RequiredReminderController {
    ) {
 
       try {
-         return ResponseEntity.ok(requiredRemainder.requiredRemainder(x, y, n));
+         return ResponseEntity.ok(requiredRemainder.calculateRequiredRemainder(x, y, n));
       } catch (Exception e) {
          return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
       }
@@ -48,7 +48,7 @@ public class RequiredReminderController {
     ) {
 
         try {
-          return ResponseEntity.ok(requiredRemainder.requiredRemainder(x, y, n));
+          return ResponseEntity.ok(requiredRemainder.calculateRequiredRemainder(x, y, n));
         } catch (IllegalArgumentException e) {
           return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
@@ -61,7 +61,7 @@ public class RequiredReminderController {
    ) {
 
       try {
-         return ResponseEntity.ok(requiredRemainder.requiredRemainder(requestReminder));
+         return ResponseEntity.ok(requiredRemainder.calculateRequiredRemainder(requestReminder));
       } catch (IllegalArgumentException e) {
          return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
       }

@@ -26,7 +26,7 @@ class TechnicalTestApplicationTests {
    void testEndpointRequiredRemainderValidPost() {
 
       RequestReminder validRequestReminder = RequiredReminderRequestMother.createValidRequestReminder();
-      ResponseReminder responseReminder =  requiredReminderApplication.requiredRemainder(validRequestReminder);
+      ResponseReminder responseReminder =  requiredReminderApplication.calculateRequiredRemainder(validRequestReminder);
       Assertions.assertNotNull(responseReminder);
       Assertions.assertEquals(12339,responseReminder.getResult());
 
@@ -34,7 +34,7 @@ class TechnicalTestApplicationTests {
 
    @Test
    void testEndpointRequiredRemainderValidGet() {
-      ResponseReminder responseReminder = requiredReminderApplication.requiredRemainder(7, 5, 12345);
+      ResponseReminder responseReminder = requiredReminderApplication.calculateRequiredRemainder(7, 5, 12345);
       Assertions.assertNotNull(responseReminder);
       Assertions.assertEquals(12339, responseReminder.getResult());
    }
@@ -43,7 +43,7 @@ class TechnicalTestApplicationTests {
    void testEndpointRequiredRemainderInvalidPost() {
       RequestReminder invalidRequestReminder = RequiredReminderRequestMother.createInvalidRequestReminder();
       try{
-         requiredReminderApplication.requiredRemainder(invalidRequestReminder);
+         requiredReminderApplication.calculateRequiredRemainder(invalidRequestReminder);
       } catch (IllegalArgumentException e) {
          Assertions.assertEquals("The input values must be positive", e.getMessage());
       }
