@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", allowCredentials = "false", exposedHeaders = {"Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"})
+@CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "false", exposedHeaders = {"Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"})
 public class RequiredReminderController {
 
    private final RequiredRemainder requiredRemainder;
