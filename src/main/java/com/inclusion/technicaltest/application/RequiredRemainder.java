@@ -19,12 +19,8 @@ public class RequiredRemainder {
       if (x < 0 || y < 0 || n < 0) {
          throw new IllegalArgumentException("The input values must be positive");
       }
-      for (int i = n; i >= 0; i--) {
-         if (i % x == y) {
-            result = i;
-            break;
-         }
-      }
+      int m = (n - y) / x;
+      result = m * x + y;
       return ResponseReminder.builder().result(result).build();
    }
 

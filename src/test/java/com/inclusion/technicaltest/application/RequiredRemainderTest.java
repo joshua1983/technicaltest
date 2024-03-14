@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RequiredRemainderTest {
 
    @Test
-   public void validRequiredRemainderOutputTest() {
+   void validRequiredRemainderOutputTest() {
 
       RequiredRemainder requiredRemainder = new RequiredRemainder();
       assertEquals(12339, requiredRemainder.calculateRequiredRemainder(7, 5, 12345).getResult());
